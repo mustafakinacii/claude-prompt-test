@@ -156,10 +156,6 @@ Test status at the time of writing: 58 tests pass, all with `FakeProvider`.
 - Token counts come from the API's usage field in real runs; in `--dry-run` they are word counts.
 - Retries and rate-limit handling are whatever the SDK does by default.
 
-## Türkçe Özet
-
-Prompt'lar sessizce bozulur: model ya da metin değişir, hata vermez ama cevap kötüleşir. `claude-prompt-test`, `prompts.yaml` dosyasında tanımladığın test senaryolarını (`contains`, `regex`, `max_words`, `is_json` vb.) Claude'a çalıştırır, tablo olarak pass/fail, gecikme ve token kullanımını gösterir; hata varsa çıkış kodu 1 olur, böylece CI'da yakalarsın. `--repeat` ile kararsız (flaky) prompt'ları bulursun, `--dry-run` ile API anahtarı olmadan YAML'ını denersin. Maliyet satırı yalnızca kendin `--price-in/--price-out` verirsen çıkar. Önemli: gerçek API yolu henüz canlı denenmedi (geliştirme sırasında anahtar yoktu); testlerin hepsi sahte sağlayıcıyla geçti. Bu bağımsız bir projedir, Anthropic ile bağlantısı yoktur.
-
 ## License
 
 MIT, see [LICENSE](LICENSE). Copyright (c) 2026 Mustafa Kınacı.
