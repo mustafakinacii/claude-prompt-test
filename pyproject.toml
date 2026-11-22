@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-prompt-test"
+version = "0.1.0"
+description = "Unit tests for your prompts: run test cases with assertions against Claude and fail CI when a prompt breaks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mustafa Kınacı" }]
+dependencies = ["anthropic", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+claude-prompt-test = "claude_prompt_test.cli:main"
+
+[project.urls]
+Repository = "https://github.com/mustafakinacii/claude-prompt-test"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
