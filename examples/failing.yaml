@@ -1,0 +1,16 @@
+# Deliberately failing example, to see what failures look like (use with --dry-run).
+prompt: "Translate to French: {{text}}"
+tests:
+  - name: too long
+    vars: {text: "Good morning"}
+    assert:
+      max_words: 2
+  - name: is json
+    vars: {text: "Good morning"}
+    assert:
+      is_json: true
+      json_has_keys: [translation]
+  - name: ok
+    vars: {text: "Good morning"}
+    assert:
+      contains: "Good morning"
